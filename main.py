@@ -1,11 +1,13 @@
 import logging
 from aiogram import executor
 from create_bot import dp
-from handlers import client
+from handlers import client, zakaz_burgeri, zakaz_bulochki
 
 logging.basicConfig(level=logging.INFO)
 
 
+zakaz_bulochki.register_handlers(dp)
+zakaz_burgeri.register_handlers(dp)
 client.register_handlers(dp)
 
 
